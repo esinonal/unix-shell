@@ -22,7 +22,7 @@ gcc -Wall -Werror -o myshell myshell.c
 
 The coolest part of this project was seeing forks and file descriptors, as with 
 the following code:
-int fileDescriptor = creat(fileName, S_IRUSR | S_IWUSR | O_APPEND| O_TRUNC);
+  int fileDescriptor = creat(fileName, S_IRUSR | S_IWUSR | O_APPEND| O_TRUNC);
   if(fileDescriptor != -1){ 
     pid = fork();
     if (pid < 0){
