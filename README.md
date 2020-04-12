@@ -20,23 +20,7 @@ The command to compile the myshell into a shell that can be run
 is the following: 
 gcc -Wall -Werror -o myshell myshell.c
 
-The coolest part of this project was seeing forks and file descriptors, as with 
-the following code:
-  int fileDescriptor = creat(fileName, S_IRUSR | S_IWUSR | O_APPEND| O_TRUNC);
-  if(fileDescriptor != -1){ 
-    pid = fork();
-    if (pid < 0){
-      exit(1);
-    }
-    else if (pid == 0){ //Child.
-      dup2(fileDescriptor,1);
-      if (execvp(*wordsInRedirCommand,wordsInRedirCommand) < 0){
-        printErrorMessage();
-        exit(0);
-      } 
-    }
-    else{
-      wait(NULL);
-      //...
-    }
-  }
+The coolest part of this project was seeing working with fork directly.
+For example, we got to write pid = fork();, then analyze the two cases
+of the parent and the child.
+
