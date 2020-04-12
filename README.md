@@ -33,7 +33,7 @@ the following code:
       if (execvp(*wordsInRedirCommand,wordsInRedirCommand) < 0){
         printErrorMessage();
         exit(0);
-      }
+      } 
     }
     else{
       wait(NULL);
